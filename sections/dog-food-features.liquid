@@ -1,0 +1,398 @@
+{{ 'section-dog-food-features.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .dog-food-features {
+    background-color: {{ section.settings.background_color }};
+  }
+
+  .dog-food-features__heading {
+    color: {{ section.settings.heading_color }};
+    font-size: {{ section.settings.heading_size }}px;
+  }
+
+  .dog-food-features__button {
+    background-color: {{ section.settings.button_color }};
+    color: {{ section.settings.button_text_color }};
+  }
+
+  .dog-food-features__button:hover {
+    background-color: {{ section.settings.button_hover_color }};
+  }
+
+  .dog-food-features__guarantee {
+    color: {{ section.settings.text_color }};
+  }
+{%- endstyle -%}
+
+<div class="dog-food-features section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="dog-food-features__content">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="dog-food-features__heading">
+          {{ section.settings.heading }}
+        </h2>
+      {%- endif -%}
+
+      <div class="dog-food-features__grid">
+        <!-- Left Features -->
+        <div class="dog-food-features__column">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.position == 'left' -%}
+              <div class="dog-food-features__item" {{ block.shopify_attributes }}>
+                {%- if block.settings.icon != blank -%}
+                  <div class="dog-food-features__icon">
+                    <img src="{{ block.settings.icon | image_url: width: 48 }}" 
+                         alt="{{ block.settings.title }}" 
+                         width="48" 
+                         height="48">
+                  </div>
+                {%- endif -%}
+                <div class="dog-food-features__text">
+                  {%- if block.settings.title != blank -%}
+                    <h3 class="dog-food-features__item-title">{{ block.settings.title }}</h3>
+                  {%- endif -%}
+                  {%- if block.settings.description != blank -%}
+                    <p class="dog-food-features__item-description">{{ block.settings.description }}</p>
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+
+        <!-- Center Image -->
+        <div class="dog-food-features__center">
+          {%- if section.settings.center_image != blank -%}
+            <div class="dog-food-features__center-image">
+              <img src="{{ section.settings.center_image | image_url: width: 370 }}" 
+                   alt="{{ section.settings.center_image.alt | escape }}"
+                   width="370" 
+                   height="370">
+            </div>
+          {%- endif -%}
+        </div>
+
+        <!-- Right Features -->
+        <div class="dog-food-features__column">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.position == 'right' -%}
+              <div class="dog-food-features__item" {{ block.shopify_attributes }}>
+                {%- if block.settings.icon != blank -%}
+                  <div class="dog-food-features__icon">
+                    <img src="{{ block.settings.icon | image_url: width: 48 }}" 
+                         alt="{{ block.settings.title }}" 
+                         width="48" 
+                         height="48">
+                  </div>
+                {%- endif -%}
+                <div class="dog-food-features__text">
+                  {%- if block.settings.title != blank -%}
+                    <h3 class="dog-food-features__item-title">{{ block.settings.title }}</h3>
+                  {%- endif -%}
+                  {%- if block.settings.description != blank -%}
+                    <p class="dog-food-features__item-description">{{ block.settings.description }}</p>
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+
+      {%- if section.settings.button_text != blank -%}
+        <div class="dog-food-features__button-wrapper">
+          <a href="{{ section.settings.button_link }}" class="dog-food-features__button button">
+            {{ section.settings.button_text }}
+          </a>
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.show_guarantee or section.settings.show_payment_icons -%}
+        <div class="dog-food-features__footer">
+          {%- if section.settings.show_guarantee -%}
+            <div class="dog-food-features__guarantee">
+              {%- if section.settings.guarantee_icon != blank -%}
+                <img src="{{ section.settings.guarantee_icon | image_url: width: 16 }}" 
+                     alt="Guarantee" 
+                     width="16" 
+                     height="16">
+              {%- endif -%}
+              <span>{{ section.settings.guarantee_text }}</span>
+            </div>
+          {%- endif -%}
+          
+          {%- if section.settings.show_payment_icons -%}
+            <div class="dog-food-features__payment-icons">
+              {%- for i in (1..5) -%}
+                {%- assign payment_icon = 'payment_icon_' | append: i -%}
+                {%- if section.settings[payment_icon] != blank -%}
+                  <img src="{{ section.settings[payment_icon] | image_url: width: 30 }}" 
+                       alt="Payment method" 
+                       width="30" 
+                       height="20">
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Dog Food Features",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "What makes us different makes them stronger",
+      "label": "Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "center_image",
+      "label": "Center comparison image"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "default": "Get your dog's healthy meal today!",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color",
+      "default": "#f97316"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button hover color",
+      "default": "#ea580c"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Guarantee & Payment"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_guarantee",
+      "default": true,
+      "label": "Show guarantee text"
+    },
+    {
+      "type": "image_picker",
+      "id": "guarantee_icon",
+      "label": "Guarantee icon"
+    },
+    {
+      "type": "text",
+      "id": "guarantee_text",
+      "default": "30-day money back guarantee",
+      "label": "Guarantee text"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "default": true,
+      "label": "Show payment icons"
+    },
+    {
+      "type": "image_picker",
+      "id": "payment_icon_1",
+      "label": "Payment icon 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "payment_icon_2",
+      "label": "Payment icon 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "payment_icon_3",
+      "label": "Payment icon 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "payment_icon_4",
+      "label": "Payment icon 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "payment_icon_5",
+      "label": "Payment icon 5"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "select",
+          "id": "position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left column"
+            },
+            {
+              "value": "right",
+              "label": "Right column"
+            }
+          ],
+          "default": "left",
+          "label": "Position"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Feature title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "default": "Feature description goes here.",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dog Food Features",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "position": "left",
+            "title": "Real Food",
+            "description": "Wholesome recipes for dogs with real meat and veggies."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "position": "left",
+            "title": "Premium Ingredient",
+            "description": "Elevating pet care with unmatched safety and quality."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "position": "right",
+            "title": "Made Fresh",
+            "description": "We prioritize maintaining the integrity of whole foods and nutrition."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "position": "right",
+            "title": "Vet Developed",
+            "description": "We raise the bar for dog nutrition, surpassing industry expectations."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

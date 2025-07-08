@@ -1,0 +1,67 @@
+.prebiotics-section {
+  min-height: 400px;
+}
+
+.prebiotics-section__grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+@media screen and (min-width: 990px) {
+  .prebiotics-section__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+.prebiotics-section__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 990px) {
+  .prebiotics-section__content {
+    gap: 1.5rem;
+  }
+}
+
+.prebiotics-section__heading {
+  margin: 0;
+  font-family: "Inter Tight", sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.25px;
+}
+
+.prebiotics-section__description {
+  margin: 0;
+  font-family: "Inter Tight", sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 2.5vw, 16px);
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+
+.prebiotics-section__image-container {
+  order: -1;
+}
+
+@media screen and (min-width: 990px) {
+  .prebiotics-section__image-container {
+    order: 0;
+  }
+}
+
+.prebiotics-section__image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  max-width: 570px;
+  aspect-ratio: 570 / 480;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "deployment-guide",
+  "steps": [
+    "1. Run 'npm run build' in your local project",
+    "2. Locate the 'out' folder created by the build",
+    "3. Compress the contents of 'out' folder into a ZIP file",
+    "4. Upload ZIP to cPanel File Manager",
+    "5. Extract ZIP contents to public_html folder",
+    "6. Ensure index.html is in the root of public_html"
+  ],
+  "notes": [
+    "The 'out' folder contains all static files needed for deployment",
+    "No server-side functionality will work (API routes, server actions)",
+    "All images and assets are included in the build"
+  ]
+}

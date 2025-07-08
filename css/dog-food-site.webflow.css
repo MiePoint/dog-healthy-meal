@@ -1,0 +1,492 @@
+/* Base Styles */
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  color: #333;
+}
+
+.container-large {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Features Section */
+.features-section {
+  background-color: #ffffff;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  min-height: 400px;
+}
+
+.features-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.features-heading-wrapper {
+  text-align: center;
+  max-width: 600px;
+}
+
+.features-main-heading {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: 0.25px;
+  color: #111827;
+  margin: 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 48px;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.features-column {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.feature-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.feature-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.feature-content {
+  flex: 1;
+}
+
+.feature-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.feature-description {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.features-center-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-image-wrapper {
+  width: 370px;
+  height: 370px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #e5e7eb;
+}
+
+.center-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.features-cta-wrapper {
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+.cta-button {
+  background-color: #f97316;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 16px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 24px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #ea580c;
+  color: #ffffff;
+}
+
+.trust-indicators {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.guarantee-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.guarantee-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.guarantee-text {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.payment-methods {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.payment-logo {
+  height: 20px;
+  width: auto;
+}
+
+/* Nutrition Section */
+.nutrition-section {
+  background-color: #f9fafb;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  min-height: 500px;
+}
+
+.nutrition-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.nutrition-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.nutrition-heading {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: 0.25px;
+  color: #161723;
+  margin: 0;
+}
+
+.nutrition-description {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: #424153;
+  margin: 0;
+}
+
+.key-points-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.key-points-heading {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: #161723;
+  margin: 0;
+}
+
+.key-points-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.key-point-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.percentage-number {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 33px;
+  line-height: 1.5;
+  letter-spacing: 0.25px;
+  color: #f97316;
+  min-width: 60px;
+  flex-shrink: 0;
+}
+
+.key-point-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: #424153;
+  margin: 0;
+}
+
+.key-point-divider {
+  height: 1px;
+  background-color: #e3e3e8;
+  width: 100%;
+  max-width: 538px;
+}
+
+.nutrition-cta-button {
+  background-color: #f97316;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 16px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.nutrition-cta-button:hover {
+  background-color: #ea580c;
+  color: #ffffff;
+}
+
+.nutrition-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nutrition-image {
+  width: 100%;
+  height: auto;
+  max-width: 570px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Health Benefits Section */
+.health-benefits-section {
+  background-color: #ffffff;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  min-height: 800px;
+}
+
+.health-benefits-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.health-benefit-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.health-benefit-block.reverse {
+  direction: rtl;
+}
+
+.health-benefit-block.reverse > * {
+  direction: ltr;
+}
+
+.health-benefit-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.health-benefit-heading {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: 0.25px;
+  color: #111827;
+  margin: 0;
+}
+
+.health-benefit-description {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: #424153;
+  margin: 0;
+}
+
+.health-benefit-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.health-benefit-image {
+  width: 100%;
+  height: auto;
+  max-width: 570px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 991px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .features-center-image {
+    order: -1;
+  }
+
+  .center-image-wrapper {
+    width: 300px;
+    height: 300px;
+  }
+
+  .nutrition-wrapper {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .health-benefit-block {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .health-benefit-block.reverse {
+    direction: ltr;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .features-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .nutrition-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .health-benefits-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .features-main-heading {
+    font-size: 28px;
+  }
+
+  .nutrition-heading {
+    font-size: 28px;
+  }
+
+  .health-benefit-heading {
+    font-size: 28px;
+  }
+
+  .features-column {
+    gap: 32px;
+  }
+
+  .feature-title {
+    font-size: 16px;
+  }
+
+  .feature-description {
+    font-size: 14px;
+  }
+
+  .center-image-wrapper {
+    width: 250px;
+    height: 250px;
+  }
+
+  .trust-indicators {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .cta-button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .nutrition-cta-button {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .container-large {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .features-wrapper {
+    gap: 32px;
+  }
+
+  .health-benefits-wrapper {
+    gap: 60px;
+  }
+
+  .percentage-number {
+    font-size: 24px;
+    min-width: 50px;
+  }
+}

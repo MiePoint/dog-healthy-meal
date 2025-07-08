@@ -1,0 +1,38 @@
+{
+  "name": "Dog Food Landing Page",
+  "description": "Premium dog food landing page with features, nutrition information, and health benefits",
+  "version": "1.0.0",
+  "author": "v0",
+  "created": "2025-01-08",
+  "pages": [
+    {
+      "name": "Home",
+      "slug": "index",
+      "title": "Premium Dog Food - Wholesome Nutrition for Your Pet"
+    }
+  ],
+  "assets": {
+    "images": [
+      "images/food-icon.png",
+      "images/pet-bowl-icon.png",
+      "images/pet-food-icon.png",
+      "images/vet-icon.png",
+      "images/shield-check-icon.png",
+      "images/food-comparison.png",
+      "images/happy-dog-product.png",
+      "images/dogs-eating.gif",
+      "images/kibble-texture.jpeg",
+      "images/paypal-logo.png",
+      "images/visa-logo.png",
+      "images/mastercard-logo.png",
+      "images/apple-pay-logo.png",
+      "images/google-pay-logo.png"
+    ]
+  },
+  "fonts": ["Inter"],
+  "breakpoints": {
+    "desktop": "992px",
+    "tablet": "768px",
+    "mobile": "480px"
+  }
+}
